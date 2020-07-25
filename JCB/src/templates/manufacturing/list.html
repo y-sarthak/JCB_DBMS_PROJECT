@@ -1,0 +1,188 @@
+{% extends 'manufacturing/base.html' %}
+
+{% block content %}
+
+<div class="#424242 grey darken-3 z-depth-4">
+  
+  <span class="center-align">
+<style type="text/css">
+  h2
+  {
+    display:inline;
+    margin-left: 570px;
+    font-weight: bold;
+  }
+</style>
+    <h2 class="#fdd835-text yellow-text text-darken-1">JCB</h2></span>
+</div>
+
+
+<div class="parallax-container">
+      <div class="parallax">
+<img src="/static/305lc-tracked-excavator.jpg">
+      </div>
+    </div>
+
+
+
+ 
+<div class="container">
+  
+
+<style type="text/css">
+  
+  h3
+  {
+    font-family:  'Rajdhani', sans-serif;
+  }
+
+  
+</style>
+     
+     <h3 class="center-align #fdd835-text yellow-text text-darken-1" style="font-weight: bold">Manufacturing Employees</h3><br>
+       
+
+
+<table class="striped highlight centered">
+        <thead>
+          <tr style="font-family: 'Varela Round', sans-serif">
+              <th>Name</th>
+              <th>Emp Number</th>
+              <th>Phone</th>
+              <th>Designation</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+{% for instance in object_list %}
+
+          <tr>
+            <td style="font-family: 'Exo 2', sans-serif"><a href="{{ instance.get_absolute_url }}">{{ instance.Name }}</a></td>
+            <td>{{ instance.emp_number }}</td>
+            <td>{{ instance.phone_number }}</td>
+            <td>{{ instance.designation }}</td>
+          </tr>
+
+{% endfor %}
+
+     </tbody>
+</table>
+
+
+
+
+      <br>
+        <br>
+        <div class="fixed-action-btn">
+  <a class="btn-floating btn-large #26a69a teal lighten-1">
+    <i class="large material-icons">menu</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating #b2ff59 light-green accent-2 tooltipped" data-position="left" data-tooltip="Create Empoyee" href="http://127.0.0.1:8000/create/"><i class="material-icons">add</i></a></li>
+    <li><a class="btn-floating #ad1457 pink darken-3 tooltipped" data-position="left" data-tooltip="Logout from {{ user }}" href="http://127.0.0.1:8000/logout"><i class="material-icons">account_circle</i></a></li>
+  </ul>
+</div>
+
+</div>
+
+   
+
+
+
+
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="/static/455zx-wheeled-loader.jpg">
+        
+       
+      </div>
+    </div>
+
+<style type="text/css">
+        .lol
+        {
+          height: 80px;
+          margin-bottom: 0px;
+          
+        }
+      </style>
+
+    <div class="row #fbc02d yellow darken-2 lol z-depth-5">
+      <style type="text/css">
+        .seth
+        {
+          margin-top: 30px;
+          margin-bottom: 20px;
+          height: 20px;
+          width: 20px;
+        }
+      </style>
+      <div class="col s2 right-align"><a target="_blank" href="https://www.facebook.com/JCBIndiaLtd/"><img class="seth" src="/static/icons/iconfinder_BW_Facebook_2_glyph_svg_5305153.png"></a></div>
+      <div class="col s2 center-align"><a target="_blank" href="https://www.instagram.com/jcbindialtd/"><img class="seth" src="/static/icons/iconfinder_Instagram_glyph_svg_5335781.png"></a></div>
+      <div class="col s2 center-align"><a target="_blank" href="https://twitter.com/JCBIndiaLtd"><img class="seth" src="/static/icons/iconfinder_BW_Twitter_glyph_svg_5305170.png"></a></div>
+      <div class="col s2 center-align"><a target="_blank" href="https://www.linkedin.com/company/10865023?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10865023%2Cidx%3A2-1-2%2CtarId%3A1468936449852%2Ctas%3Ajcb%20india%20"><img class="seth" src="/static/icons/iconfinder_BW_Linkedin_glyph_svg_5305157.png"></a></div>
+      <div class="col s2 center-align"><a target="_blank" href="https://www.youtube.com/user/jcbindialtd?feature=results_main"><img class="seth" src="/static/icons/iconfinder_BW_Youtube_glyph_svg_5305164.png"></a></div>
+      <div class="col s2 left-align"><a target="_blank" href="https://en.wikipedia.org/wiki/JCB_(company)"><img class="seth" src="/static/icons/iconfinder_BW_Dribbble_2_glyph_svg_5305152.png"></a></div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems);
+  });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
+
+
+
+var instance = M.Carousel.init({
+    fullWidth: true,
+    indicators: true
+  });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems,{
+      fullWidth: true,
+      indicators: true
+    });
+  });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems);
+  });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems);
+  });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped');
+    var instances = M.Tooltip.init(elems);
+  });
+
+  </script>
+{% endblock %}
+
+
+
+
+
+<!-- <img src="/static/3dx-backhoe-loader.jpg">  -->

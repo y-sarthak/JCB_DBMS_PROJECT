@@ -1,0 +1,167 @@
+{% extends 'manufacturing/base.html' %}
+
+{% block content %}
+
+{% load material_form %}
+
+
+
+<div class="#424242 grey darken-3 z-depth-3">
+  <span class="center-align">
+<style type="text/css">
+  h2
+  {
+    display:inline;
+    margin-left: 570px;
+    font-weight: bold;
+  }
+</style>
+    <h2 class="#fdd835-text yellow-text text-darken-1 ">JCB</h2></span>
+</div>
+
+
+<style type="text/css">
+  
+  body
+  {
+    background-color: #FFCA59;
+
+  }
+
+  .contaiii
+  {
+    background-color: white;
+    margin-top: 100px;
+    width: 75vw;
+    margin-left: 137px;
+  }
+</style>
+
+<div class="contaiii z-depth-4">
+
+<div class="row yellow-text">
+  <form method="POST" class="col s6 offset-s3 l6 offset-l3 m6 offset-m3">
+    {% csrf_token %}
+    {% form form=form %}
+
+
+<div class="row">
+
+  <div class="col s6">
+
+{% part form.name prefix %}<i class="material-icons prefix">account_circle</i>{% endpart %}
+
+
+
+  </div>
+      <div class="col s6">
+
+{% part form.phone_number prefix %}<i class="material-icons prefix">phone</i>{% endpart %}</div>
+      
+</div>
+
+<div class="col s6">
+
+{% part form.gstn prefix %}<i class="material-icons prefix">assignment_ind</i>{% endpart %}</div>
+      
+</div>
+
+
+
+<div class="col s6">
+
+{% part form.date prefix %}<i class="material-icons prefix">date_range</i>{% endpart %}</div>
+      
+</div>
+
+
+
+<div class="col s6">
+
+{% part form.email prefix %}<i class="material-icons prefix">email</i>{% endpart %}</div>
+      
+</div>
+
+
+
+<div class="col s6">
+
+{% part form.sign prefix %}<i class="material-icons prefix">wc</i>{% endpart %}</div>
+      
+</div>
+
+
+<div class="col s6">
+
+{% part form.bill prefix %}<i class="material-icons prefix">attach_money</i>{% endpart %}</div>
+      
+</div>
+
+
+
+<div class="col s6">
+
+{% part form.description prefix %}<i class="material-icons prefix">border_color</i>{% endpart %}</div>
+      
+</div>
+
+
+
+    {% endform %}
+
+<div class="center-align" style="margin-top: 50px">
+
+    <button class="btn waves-effect waves-light blue" type="submit" name="action">Update
+    <i class="material-icons right">arrow_upward</i>
+  </button>
+
+
+  <a class="waves-effect waves-light btn modal-trigger red" href="#modal1">delete  <i class="material-icons right">delete</i></a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal black">
+    <div class="modal-content">
+      
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <h4>DO YOU WANT TO DELETE THIS ENTRY?</h4>
+    <p>
+      <input type="submit" value="Yes" style="display:inline">
+      <div class="modal-footer" style="display:inline">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+    </div>
+    </p>
+  </form>
+
+
+    </div>
+  </div>
+</div>
+
+</form>
+</div>
+
+
+        
+</div>
+
+
+
+{% endblock %}
+
+
+{% block script %}
+
+
+<script type="text/javascript">
+  
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+
+
+</script>
+
+{% endblock %}
